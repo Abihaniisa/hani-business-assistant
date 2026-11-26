@@ -27,7 +27,7 @@ class MainActivity:Activity(){
  private fun shape(color:Int,r:Int=18,stroke:Int=0)=GradientDrawable().apply{setColor(color);cornerRadius=dp(r).toFloat();if(stroke!=0)setStroke(dp(1),stroke)}
  private fun col()=LinearLayout(this).apply{orientation=1}
  private fun row()=LinearLayout(this).apply{orientation=0;gravity=Gravity.CENTER_VERTICAL}
- private fun label(s:String,size:Float=14f,color:Int=ink,bold:Boolean=false)=TextView(this).apply{text=s;textSize=size;setTextColor(color);if(bold)typeface=Typeface.create("sans-serif-medium",0);setLineSpacing(dp(2),1f)}
+ private fun label(s:String,size:Float=14f,color:Int=ink,bold:Boolean=false)=TextView(this).apply{text=s;textSize=size;setTextColor(color);if(bold)typeface=Typeface.create("sans-serif-medium",0);setLineSpacing(dp(2).toFloat(),1f)}
  private fun space(p:LinearLayout,h:Int=12){p.addView(View(this),LinearLayout.LayoutParams(1,dp(h)))}
  private fun card()=col().apply{background=shape(white,20);setPadding(dp(17),dp(16),dp(17),dp(16));elevation=dp(1).toFloat()}
  private fun btn(s:String,primary:Boolean=true,action:()->Unit)=TextView(this).apply{text=s;textSize=14f;typeface=Typeface.create("sans-serif-medium",0);gravity=Gravity.CENTER;setTextColor(if(primary)white else green);background=shape(if(primary)green else mint,14);setPadding(dp(16),dp(14),dp(16),dp(14));minHeight=dp(48);setOnClickListener{action()}}
